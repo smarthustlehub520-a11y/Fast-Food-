@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Fast Food Hub</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Fast Food Hub</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-    <h1>🍔 Fast Food Hub</h1>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Menu</a>
-        <a href="#">Contact</a>
-    </nav>
+  <h1>🍔 Fast Food Hub</h1>
+
+  <div class="actions">
+    <input type="text" id="search" placeholder="Search food..." onkeyup="filterMenu()">
+    <button onclick="toggleTheme()">🌙</button>
+  </div>
 </header>
 
 <section class="hero">
-    <h2>Delicious Food, Delivered Fast!</h2>
-    <button onclick="orderNow()">Order Now</button>
+  <h2>Order Your Favorite Food Instantly</h2>
 </section>
 
-<section class="menu">
-    <h2>Our Menu</h2>
-    <div class="item">🍕 Pizza</div>
-    <div class="item">🍔 Burger</div>
-    <div class="item">🍟 Fries</div>
+<section class="menu" id="menu">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086" />
+    <h3>Burger</h3>
+    <p>$5</p>
+    <button onclick="addToCart('Burger',5)">Add</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1601924928376-5c2e2c3c0d2c" />
+    <h3>Pizza</h3>
+    <p>$8</p>
+    <button onclick="addToCart('Pizza',8)">Add</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1606755962773-3c8d0f6b8a1d" />
+    <h3>Fries</h3>
+    <p>$3</p>
+    <button onclick="addToCart('Fries',3)">Add</button>
+  </div>
+
 </section>
+
+<!-- CART SIDEBAR -->
+<div class="cart" id="cart">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <h3>Total: $<span id="total">0</span></h3>
+</div>
 
 <script src="script.js"></script>
 </body>
